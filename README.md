@@ -8,33 +8,30 @@ This repository contains implementations for Digital Image Processing (DIP) expe
 The objective of this lab is to study and implement core image processing algorithms from scratch using Python. We prioritize manual implementation over high-level library functions to gain a deeper understanding of spatial and frequency domain transformations.
 
 ### List of Experiments
-1. **Mathematical Signals**: Study and plot basic signals (unit step, sine, cosine, exponential, square wave, impulse).
-2. **Point Processing**:
-    - Image Negation
-    - Image Thresholding
-3. **Contrast Stretching**: Increasing the dynamic range of gray levels.
-4. **Bit Plane Slicing**: Analyzing the relative importance of individual bits in an image.
-5. **Histogram Equalization**: Enhancing image contrast by spreading the gray level distribution.
-6. **Zooming Techniques**:
-    - Zooming by Replication
-    - Zooming by Interpolation
-7. **Spatial Domain Filtering**:
-    - Low Pass Filtering (Smoothing)
-    - High Pass Filtering (Sharpening)
-    - Median Filtering
-8. **Noise Reduction**: Implementing median filtering specifically for Salt and Pepper noise.
-9. **Edge Detection**: Using derivative filter masks (Prewitt, Sobel, Laplacian).
-10. **Mini Project**: Application-based image processing implementation.
+1. **Basic Signals**: Study and plot basic signals (unit step, sine, cosine, exponential, square wave, impulse).
+2. **Negative Image**: Compute the photographic negative of a grayscale image using point processing.
+3. **Thresholding**: Convert a grayscale image to binary using manual thresholding at different levels.
+4. **Contrast Stretching**: Increase the dynamic range of gray levels in a low-contrast image.
+5. **Bit Plane Slicing**: Decompose an image into its 8 individual bit planes.
+6. **Histogram Equalization**: Enhance image contrast by redistributing pixel intensities uniformly.
+7. **Magnification**: Zoom images using pixel replication and bilinear interpolation.
+8. **Low Pass Filtering**: Smooth images using mean (averaging) filters in the spatial domain.
+9. **Median Filtering**: Remove salt and pepper noise using a manual median filter.
+10. **Edge Detection & Segmentation**: Detect edges using Sobel operators and segment by thresholding edge magnitude.
 
 ### Setup and Usage
 This project uses uv for dependency management.
 
 1. **Install uv**: Follow the instructions at astral.sh/uv.
-2. **Run an experiment**:
+2. **Sync dependencies**:
    ```bash
-   uv run python exp6_zooming.py
+   uv sync
    ```
-3. **Visualization**: Experiments generate comparison plots using matplotlib, typically saved as PNG files in the root directory.
+3. **Run an experiment**:
+   ```bash
+   uv run python a7/a7_magnification.py
+   ```
+4. **Visualization**: Experiments generate comparison plots using matplotlib, typically saved within the respective `aN/` directory alongside the source code.
 
 ---
 
@@ -48,7 +45,7 @@ This project uses uv for dependency management.
 ### Implementation Guidelines
 - **No High-Level Functions**: Do not use library-based implementation functions (e.g., `cv2.resize`, `cv2.threshold`, `cv2.equalizeHist`) for the core logic of experiments. Write the algorithms manually using loops or vectorized NumPy operations.
 - **Data Types**: Be mindful of uint8 overflows during arithmetic operations. Cast to float32 for calculations and handle clipping before casting back to uint8.
-- **Structure**: Each experiment should follow the `exp{N}_{name}.py` naming convention.
+- **Structure**: Each experiment is organized in its own `a{N}/` directory with the file named `a{N}_{description}.py`.
 - **Test Assets**: Use `cameraman.jpg` as the primary test image. Fallback to synthetic patterns if the image is missing.
 - **No Emojis**: Do not use emojis in code comments, commit messages, or documentation.
 - **Git Protocol**: Do not commit changes to the repository unless explicitly instructed by the user.

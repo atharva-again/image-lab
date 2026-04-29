@@ -11,7 +11,7 @@ This repository contains Python implementations for Digital Image Processing (DI
 ## Build and Execution Commands
 - **Install Dependencies**: `uv sync`
 - **Add Package**: `uv add <package_name>`
-- **Run Experiment**: `uv run python exp{N}_{name}.py` (e.g., `uv run python exp6_zooming.py`)
+- **Run Experiment**: `uv run python a{N}/a{N}_{name}.py` (e.g., `uv run python a7/a7_magnification.py`)
 - **Linting/Diagnostics**: Use `lsp_diagnostics` tool on the target file.
 
 ## Code Style Guidelines
@@ -23,7 +23,7 @@ This repository contains Python implementations for Digital Image Processing (DI
 - **Vectorization**: Prefer NumPy vectorized operations over explicit loops for performance, but loops are acceptable if they match the pedagogical logic of the lab manual.
 
 ### 2. Naming Conventions
-- **Files**: `exp{N}_{description}.py` (e.g., `exp6_zooming.py`).
+- **Files**: `a{N}/a{N}_{description}.py` (e.g., `a7/a7_magnification.py`).
 - **Functions**: `snake_case` (e.g., `zoom_by_interpolation`).
 - **Variables**: `snake_case` (e.g., `image_data`, `row_idx`).
 - **Constants**: `UPPER_SNAKE_CASE`.
